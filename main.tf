@@ -1,10 +1,12 @@
 //Variables to make
 //Port to listen for cloud run and app
 //SQL username and password
+/*
 variable "gcp_service_list" {
   description = "List of GCP service to be enabled for a project."
   type        = list
 }
+
 
 gcp_service_list = [
   "compute.googleapis.com",     # Compute Engine API
@@ -18,7 +20,7 @@ gcp_service_list = [
   "iam.googleapis.com",               # Identity and Access Management (IAM) API
   "iamcredentials.googleapis.com"    # IAM Service Account Credentials API
 ]
-
+*/
 provider "google" {
     credentials = file("credential.json")
     //project = var.project
