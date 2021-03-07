@@ -1,6 +1,23 @@
 //Variables to make
 //Port to listen for cloud run and app
 //SQL username and password
+variable "gcp_service_list" {
+  description = "List of GCP service to be enabled for a project."
+  type        = list
+}
+
+gcp_service_list = [
+  "compute.googleapis.com",     # Compute Engine API
+  "cloudresourcemanager.googleapis.com",   # Cloud Resource Manager API
+  "vpcaccess.googleapis.com",         # Serverless VPC Access API
+  "servicenetworking.googleapis.com",     # Serverless Networking API
+  "containerregistry.googleapis.com",        # Container Registry API
+  "sqladmin.googleapis.com",           # Cloud SQL Admin API
+  "run.googleapis.com",               # Cloud Run Admin API
+  "cloudapis.googleapis.com",         # Google Cloud APIs"
+  "iam.googleapis.com",               # Identity and Access Management (IAM) API
+  "iamcredentials.googleapis.com"    # IAM Service Account Credentials API
+]
 
 provider "google" {
     credentials = file("credential.json")

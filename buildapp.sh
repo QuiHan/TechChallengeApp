@@ -10,14 +10,14 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member="serviceAccount:$SER
 gcloud iam service-accounts keys create credential.json --iam-account=$SERVICE_ACCOUNT_NAME@$PROJECT_ID.iam.gserviceaccount.com
 
 #Enable required APIs
-echo "Enabling required APIs"
-gcloud services enable compute.googleapis.com
-gcloud services enable cloudresourcemanager.googleapis.com
-gcloud services enable vpcaccess.googleapis.com
-gcloud services enable servicenetworking.googleapis.com
-gcloud services enable containerregistry.googleapis.com
-gcloud services enable sqladmin.googleapis.com
-gcloud services enable run.googleapis.com
+#echo "Enabling required APIs"
+#gcloud services enable compute.googleapis.com
+#gcloud services enable cloudresourcemanager.googleapis.com
+#gcloud services enable vpcaccess.googleapis.com
+#gcloud services enable servicenetworking.googleapis.com
+#gcloud services enable containerregistry.googleapis.com
+#gcloud services enable sqladmin.googleapis.com
+#gcloud services enable run.googleapis.com
 
 echo "Running build.sh"
 ./build.sh
