@@ -28,8 +28,13 @@ docker build -t gcr.io/$PROJECT_ID/techchallengeapp .
 echo "Pushing image to gcr.io/$PROJECT_ID"
 docker push gcr.io/$PROJECT_ID/techchallengeapp
 
+# Set secrets via environment variables
+export TF_VAR_sql_username="<username>"
+export TF_VAR_sql_password="<password>"
+
 echo "Initializing Terrform"
 terraform init
 
+# When you run Terraform, it'll pick up the secret automatically
 echo "Applying Terraform template"
 terraform apply -auto-approve
