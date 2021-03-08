@@ -1,7 +1,12 @@
 #!/bin/sh
 
+# Feel free to change the variables
 PROJECT_ID=$DEVSHELL_PROJECT_ID
 SERVICE_ACCOUNT_NAME="terraform"
+
+# Set secrets via environment variables
+export TF_VAR_sql_username="<username>"
+export TF_VAR_sql_password="<password>"
 
 #Create service account name terraform and download service account key as json file
 echo "Creating terraform service account"
@@ -27,10 +32,6 @@ docker build -t gcr.io/$PROJECT_ID/techchallengeapp .
 
 echo "Pushing image to gcr.io/$PROJECT_ID"
 docker push gcr.io/$PROJECT_ID/techchallengeapp
-
-# Set secrets via environment variables
-export TF_VAR_sql_username="<username>"
-export TF_VAR_sql_password="<password>"
 
 echo "Initializing Terrform"
 terraform init
