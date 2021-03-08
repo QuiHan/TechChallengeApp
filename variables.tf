@@ -23,11 +23,9 @@ variable "cloud_run_port" {
 variable "sql_username" {
     description = "Database administrator username"
     default     = "app"
-    sensitive   = true
 }
 
 variable "sql_password" {
     description = "Database administrator password"
     default     = "serviantest"
-    sensitive   = true
 }
