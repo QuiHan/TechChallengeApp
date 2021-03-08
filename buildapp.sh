@@ -30,6 +30,8 @@ docker build -t gcr.io/$PROJECT_ID/techchallengeapp .
 echo "Pushing image to gcr.io/$PROJECT_ID"
 docker push gcr.io/$PROJECT_ID/techchallengeapp
 
+sed -i s/PROJECT_ID/$PROJECT_ID/g terraform.tfvars
+
 echo "Initializing Terrform"
 terraform init
 
