@@ -24,9 +24,6 @@ gcloud services enable containerregistry.googleapis.com
 gcloud services enable sqladmin.googleapis.com
 gcloud services enable run.googleapis.com
 
-echo "Running build.sh"
-./build.sh
-
 echo "Building image with tag: gcr.io/$PROJECT_ID/techchallengeapp"
 docker build -t gcr.io/$PROJECT_ID/techchallengeapp .
 
